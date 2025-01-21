@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+
+<!DOCTYPE html>  
+<html lang="pt-br">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Plataforma Cadastro de Funcionários</title>  
+</head>  
+<body>  
+    <h1>Cadastrar Funcionário</h1>  
+    <form action="" method="POST">
+        <label>Username</label>
+        <input type="text" class="input-form" name="username" id="">
+        <br>
+        <br>
+        <label>Senha</label>
+        <input type="password" class="input-form" name="senha" id="">
+        <br>
+        <br>
+        <label>Confirmar senha</label>
+        <input type="password" class="input-form" name="confirmar_senha" id="">
+        <br>
+        <br>
+        <input type="submit" value="Enviar" class="btn-cadastro">
+        <br>
+        <br>
+        <br>
+        <br>
+    </form>
+
+</body>  
+</html>
+
+{% endblock 'conteudo' %}
