@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Categoria(models.Model):
     senioridade = models.CharField(max_length=20)
+    #default='senioridade'
     def __str__(self):
         return self.nome
 
@@ -16,8 +17,8 @@ class Funcionario(models.Model):
     cargo = models.CharField(max_length=100)  
     salario = models.DecimalField(max_digits=10, decimal_places=2)  
     data_admissao = models.DateField()  
-    categoria_senioridade = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
-    carta_apresentacao = models.TextField(blank=True, null=True)
+    senioridade = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING, null=True, blank=True)
+    carta_apresentacao = models.TextField(default='Sem carta de apresentação')
 
     def __str__(self):  
         return self.nome

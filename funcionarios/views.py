@@ -6,17 +6,12 @@ import pandas as pd
 
 def cadastrar_funcionario(request):  
     #return HttpResponse('Olá mundo')
-    """ if request.method == 'POST':  
-        form = FuncionarioForm(request.POST)  
-        if form.is_valid():  
-            form.save()  
-            return redirect('cadastrar_funcionario')  
-    else:  
-        form = FuncionarioForm()  
-    
-    funcionarios = Funcionario.objects.all()  """ 
+    if request.method == 'GET':
+        return render(request, 'cadastrar_funcionario.html')
 
-    return render(request, 'cadastrar_funcionario.html')
+
+  
+
    
 
 def exportar_funcionarios(request):  

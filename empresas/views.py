@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect  
 #from django.http import HttpResponse
 #from .forms import FuncionarioForm  
-from .models import Empresa  
+#from .models import Empresa  
 import pandas as pd  
 from django.contrib.auth.models import User 
 from django.contrib.messages import constants
