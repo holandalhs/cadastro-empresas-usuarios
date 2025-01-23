@@ -6,7 +6,7 @@ class Categoria(models.Model):
     senioridade = models.CharField(max_length=20)
     #default='senioridade'
     def __str__(self):
-        return self.nome
+        return self.senioridade
 
 
 

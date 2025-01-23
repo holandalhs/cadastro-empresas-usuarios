@@ -34,7 +34,8 @@
                         <br>  
                         <h3>Plataforma Cadastro de Funcionários</h3>  
                         <div class="box-form">  
-                            <form action="" method="POST">{% csrf_token %}  
+                            <form action="{% url 'cadastrar_funcionario' %}" method="POST">{% csrf_token %}  
+
                                 {% if messages %}  
                                     <br>  
                                     {% for message in messages %}  
@@ -72,7 +73,7 @@
                                             <select id="senioridade" class="form-control" name="senioridade">  
                                                 <option value="">Selecione a Senioridade</option>  
                                                 {% for categoria in categorias %}  
-                                                    <option value="{{ categoria.id }}">{{ categoria.nome }}</option>  
+                                                    <option value="{{ categoria.id }}">{{ categoria.senioridade }}</option>  
                                                 {% endfor %}  
                                             </select>  
                                         </div>  
