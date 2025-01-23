@@ -23,7 +23,7 @@ def cadastrar_funcionario(request):
         senioridade = request.POST.get('senioridade')
         carta_apresentacao = request.POST.get('carta_apresentacao')
 
-        """ if len(nome.strip()) == 0 or len(cargo.strip()):
+        """ if len(nome.strip()) == 0 or len(cargo.strip()) == 0:
             messages.add_message(request, constants.ERROR,
                                   "Obrigatório preencher os campos de nome e cargo.",)
             return redirect('/funcionarios/cadastrar_funcionario') """
@@ -52,5 +52,6 @@ def exportar_funcionarios(request):
 
     # Salvando em um arquivo Excel  
     df.to_excel('funcionarios.xlsx', index=False)  
+    messages.add_message(request, constants.SUCCESS, "Exportação realizada com sucesso.")
 
-    return redirect('cadastrar_funcionario')
+    return redirect('/funcionarios/exportar_funcionarios')
