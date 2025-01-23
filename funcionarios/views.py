@@ -23,25 +23,23 @@ def cadastrar_funcionario(request):
         senioridade = request.POST.get('senioridade')
         carta_apresentacao = request.POST.get('carta_apresentacao')
 
-        if len(nome.strip()) == 0 or len(cargo.strip()):
+        """ if len(nome.strip()) == 0 or len(cargo.strip()):
             messages.add_message(request, constants.ERROR,
-                                  'Obrigatório preencher os campos de nome e cargo.',)
-            return redirect('/funcionarios/cadastrar_funcionario')
+                                  "Obrigatório preencher os campos de nome e cargo.",)
+            return redirect('/funcionarios/cadastrar_funcionario') """
         
         funcionario = Funcionario(
-            user=request.user,
+            user=request.user, ##a empresa para este funcionário, é a empresa logada 
             nome=nome,
             cargo=cargo,
             salario=salario,
             data_admissao=data_admissao,
-            senioridade=senioridade,
+            senioridade_id=senioridade, #por ser chave estrangeira passo _id
             carta_apresentacao=carta_apresentacao
         )
         funcionario.save()
 
-        messages.add_message(
-            request, constants.SUCCESS, 'Funcionário cadastrado com sucesso'
-        )
+        messages.add_message(request, constants.SUCCESS, "Funcionário cadastrado com sucesso.")
         return redirect('/funcionarios/cadastrar_funcionario')
 
   

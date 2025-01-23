@@ -4,7 +4,8 @@
 
 {% block 'cabecalho' %}  
     <link href="{% static 'funcionarios/css/cadastro.css' %}" rel="stylesheet">  
-{% endblock %}  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+{% endblock 'cabecalho' %}  
 
 {% block 'conteudo' %}  
     <div class="rh">  
@@ -31,11 +32,10 @@
                             <div class="circle c2"></div>  
                             <div class="circle c3"></div>  
                         </div>  
-                        <br>  
-                        <h3>Plataforma Cadastro de Funcionários</h3>  
-                        <div class="box-form">  
-                            <form action="{% url 'cadastrar_funcionario' %}" method="POST">{% csrf_token %}  
+                        <br>
 
+                        <div class="box-form">
+                                <h3>Plataforma Cadastro de Funcionários</h3>  
                                 {% if messages %}  
                                     <br>  
                                     {% for message in messages %}  
@@ -45,54 +45,56 @@
                                     {% endfor %}  
                                 {% endif %}  
                                 <br>  
-
-                                <div class="row">  
-                                    <div class="col-md-6">  
-                                        <div class="form-group">  
-                                            <label for="nome">Nome</label>  
-                                            <input type="text" id="nome" class="form-control" placeholder="Nome do Funcionário" name="nome" required>  
+                                <form action="{% url 'cadastrar_funcionario' %}" method="POST">{% csrf_token %}    
+                                    <div class="row">  
+                                        <div class="col-md-6">  
+                                            <div class="form-group">  
+                                                <label for="nome">Nome</label>  
+                                                <input type="text" class="form-control" placeholder="Nome do Funcionário" name="nome" required>  
+                                            </div>  
+                                            <br>  
+                                            <div class="form-group">  
+                                                <label for="cargo">Cargo</label>  
+                                                <input type="text" class="form-control" placeholder="Cargo do Funcionário" name="cargo" required>  
+                                            </div>  
+                                            <br>  
+                                            <div class="form-group">  
+                                                <label for="salario">Salário</label>  
+                                                <input type="number" id="salario" class="form-control" placeholder="Salário do Funcionário" name="salario" step="0.01" required>  
+                                            </div>  
+                                            <br>  
+                                            <div class="form-group">  
+                                                <label for="data_admissao">Data de Admissão</label>  
+                                                <input type="date" id="data_admissao" class="form-control" name="data_admissao" required>  
+                                            </div>  
+                                            <br>  
+                                            <div class="form-group">  
+                                                <label for="senioridade">Senioridade</label>  
+                                                <select id="senioridade" class="form-control" name="senioridade">  
+                                                    <option value="">Selecione a Senioridade</option>  
+                                                    {% for categoria in categorias %}  
+                                                        <option value="{{ categoria.id }}">{{ categoria.nome }}</option>  
+                                                    {% endfor %}  
+                                                </select>  
+                                            </div>  
                                         </div>  
-                                        <br>  
-                                        <div class="form-group">  
-                                            <label for="cargo">Cargo</label>  
-                                            <input type="text" id="cargo" class="form-control" placeholder="Cargo do Funcionário" name="cargo" required>  
-                                        </div>  
-                                        <br>  
-                                        <div class="form-group">  
-                                            <label for="salario">Salário</label>  
-                                            <input type="number" id="salario" class="form-control" placeholder="Salário do Funcionário" name="salario" step="0.01" required>  
-                                        </div>  
-                                        <br>  
-                                        <div class="form-group">  
-                                            <label for="data_admissao">Data de Admissão</label>  
-                                            <input type="date" id="data_admissao" class="form-control" name="data_admissao" required>  
-                                        </div>  
-                                        <br>  
-                                        <div class="form-group">  
-                                            <label for="senioridade">Senioridade</label>  
-                                            <select id="senioridade" class="form-control" name="senioridade">  
-                                                <option value="">Selecione a Senioridade</option>  
-                                                {% for categoria in categorias %}  
-                                                    <option value="{{ categoria.id }}">{{ categoria.senioridade }}</option>  
-                                                {% endfor %}  
-                                            </select>  
-                                        </div>  
-                                    </div>  
-                                    <div class="col-md-6">  <!-- Carta de Apresentação permanece na segunda coluna -->  
-                                        <div class="form-group">  
-                                            <label for="carta_apresentacao">Carta de Apresentação</label>  
-                                            <textarea id="carta_apresentacao" class="form-control" name="carta_apresentacao" rows="8" placeholder="Digite a carta de apresentação (opcional)"></textarea>  
-                                        </div>  
-                                        <br>  
+                                        <div class="col-md-6">  <!-- Carta de Apresentação permanece na segunda coluna -->  
+                                            <div class="form-group">  
+                                                <label for="carta_apresentacao">Carta de Apresentação</label>  
+                                                <textarea id="carta_apresentacao" class="form-control" name="carta_apresentacao" rows="8" placeholder="Digite a carta de apresentação (opcional)"></textarea>  
+                                            </div>  
+                                            <br>  
                                         <div class="row">  
                                             <input type="submit" value="Cadastrar Funcionário" class="btn-cadastro">  
                                         </div>  
+                                        </div>  
                                     </div>  
-                                </div>  
-
-                            </form>  
-                        </div>   
-                    </div>  
+                            
+                                </form>                   
+                                
+                        </div>  
+                    
+                    </div>
                 </div>  
             </div>  
         </div>  
