@@ -3,8 +3,8 @@
     padding: 0;
 }
 
-.relacionamento{
-    background-image: url('/static/empresas/img/relacionamento.jpeg') !important;
+.rh{
+    background-image: url('/static/empresas/img/rh.jpeg') !important;
     height: 100vh;
     background-size: cover;
 }
@@ -29,9 +29,11 @@
 }
 
 .box-form{
-    padding: 20px;
+    padding: 40px;
     background-color: rgba(217,217,217, .05);
     color: white !important;
+    max-width: 900px; /* Ajuste o valor conforme necessário */  
+    margin: auto; /* Centraliza o formulário */ 
 }
 
 .box-circle{
