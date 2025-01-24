@@ -53,48 +53,19 @@ O projeto **cadastro_funcionarios** fornece um sistema onde cada empresa (usuár
 
 A estrutura de pastas do projeto segue o padrão:
 
-cadastro_funcionarios/
+cadastro_funcionarios -> projeto
 │
-├── empresas/
-│   ├── migrations/
-│   ├── templates/
-│   │   └── empresas/
-│   │       ├── cadastrar_empresa.html
-│   │       └── logar_empresa.html
-│   ├── static/
-│   │   └── empresas/
-│   │       └── css/
-│   ├── views.py
-│   └── urls.py
-│
-├── funcionarios/
-│   ├── migrations/
-│   ├── templates/
-│   │   └── funcionarios/
-│   │       └── cadastrar_funcionario.html
-│   ├── static/
-│   │   └── funcionarios/
-│   │       └── css/
-│   ├── models.py
-│   ├── views.py
-│   └── urls.py
-│
-├── cadastro_funcionarios/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-│   └── asgi.py
-│
-├── manage.py
-└── db
-
+├── app empresas/
+│ │
+├── app funcionarios/
+│  │
+├── core cadastro_funcionarios/
 
 ## 4. Configuração e Instalação
 
 1. **Clonar o repositório**:
 
    git clone https://github.com/seu-usuario/cadastro_funcionarios.git
-
 
 2. **Criar ambiente virtual**:
 
@@ -111,3 +82,31 @@ cadastro_funcionarios/
 
 5. **Execução do projeto**:
     python manage.py runserver
+
+## 6. Funcionalidades Principais
+
+### 6.1 Cadastro de Empresas
+
+- A empresa se cadastra informando um **username** e uma **senha**, que são gerenciados via `User` do Django.  
+- Após o cadastro bem-sucedido, é possível realizar o login.
+
+### 6.2 Login/Logout de Empresas
+
+- O login é feito com as credenciais informadas no cadastro (**username** e **senha**).  
+- Após logar, a empresa tem acesso às funcionalidades de cadastro de funcionários e exportação.  
+- O logout encerra a sessão atual.
+
+### 6.3 Cadastro de Funcionários
+
+- A empresa logada pode cadastrar quantos funcionários desejar, informando:  
+  - **Nome**  
+  - **Cargo**  
+  - **Salário**  
+  - **Data de Admissão**  
+  - **Senioridade** (selecionada a partir de categorias predefinidas no banco)  
+  - **Carta de Apresentação** (opcional)
+
+### 6.4 Exportação de Funcionários para Excel
+
+- É possível exportar todos os funcionários cadastrados em um arquivo **.xlsx** por meio de um botão no formulário de cadastro de funcionários.  
+- A exportação é feita usando **Pandas** para transformar os dados em um *DataFrame* e salvá-los no arquivo.
