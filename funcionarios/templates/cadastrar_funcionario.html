@@ -78,19 +78,25 @@
                                                 </select>  
                                             </div>  
                                         </div>  
+
                                         <div class="col-md-6">  <!-- Carta de Apresentação permanece na segunda coluna -->  
                                             <div class="form-group">  
                                                 <label for="carta_apresentacao">Carta de Apresentação</label>  
                                                 <textarea id="carta_apresentacao" class="form-control" name="carta_apresentacao" rows="8" placeholder="Digite a carta de apresentação (opcional)"></textarea>  
                                             </div>  
                                             <br>  
-                                        <div class="row">  
-                                            <input type="submit" value="Cadastrar Funcionário" class="btn-cadastro">  
+                                            <div class="row">  
+                                                <input type="submit" value="Cadastrar Funcionário" class="btn-cadastro">  
+                                            </div>  
                                         </div>  
-                                        </div>  
-                                    </div>  
-                            
-                                </form>                   
+                                    </div>                      
+                                </form>
+                                
+                                <!-- Formulário para exportar os funcionários -->  
+                                <form action="{% url 'exportar_funcionarios' %}" method="POST" style="margin-top: 15px;">{% csrf_token %}  
+                                    <button type="submit" class="btn-cadastro">Exportar Funcionários</button>  
+                                </form>
+
                                 
                         </div>  
                     

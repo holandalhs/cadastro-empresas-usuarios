@@ -54,4 +54,4 @@ def exportar_funcionarios(request):
     df.to_excel('funcionarios.xlsx', index=False)  
     messages.add_message(request, constants.SUCCESS, "Exportação realizada com sucesso.")
 
-    return redirect('/funcionarios/exportar_funcionarios')
+    return redirect('/funcionarios/cadastrar_funcionario')
