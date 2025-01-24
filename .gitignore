@@ -1,0 +1,14 @@
+# Ignorar banco de dados SQLite
+db.sqlite3
+
+# Ignorar arquivos de migração (opcional)
+*/migrations/*.pyc
+*/migrations/*.py
+
+# Ignorar a pasta de configurações do ambiente virtual (caso esteja dentro do projeto)
+venv/
+
+# Ignorar arquivos temporários do sistema
+*.pyc
+__pycache__/
+*.log
