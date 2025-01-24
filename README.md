@@ -100,6 +100,9 @@ cadastro_funcionarios -> projeto
 - Após logar, a empresa tem acesso às funcionalidades de cadastro de funcionários e exportação.  
 - O logout encerra a sessão atual.
 
+<img src="images/logar.png" alt="Cadastrar Empresa" width="200px" />
+
+
 ### 6.3 Cadastro de Funcionários
 
 - A empresa logada pode cadastrar quantos funcionários desejar, informando:  
@@ -109,6 +112,9 @@ cadastro_funcionarios -> projeto
   - **Data de Admissão**  
   - **Senioridade** (selecionada a partir de categorias predefinidas no banco)  
   - **Carta de Apresentação** (opcional)
+
+<img src="images/cadastro funcionários.png" alt="Cadastrar Empresa" width="200px" />
+
 
 ### 6.4 Exportação de Funcionários para Excel
 
