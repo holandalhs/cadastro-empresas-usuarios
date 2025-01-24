@@ -91,6 +91,9 @@ cadastro_funcionarios -> projeto
 - A empresa se cadastra informando um **username** e uma **senha**, que são gerenciados via `User` do Django.  
 - Após o cadastro bem-sucedido, é possível realizar o login.
 
+<img src="images/cadastrar empresa.png" alt="Cadastrar Empresa" width="200px" />
+
+
 ### 6.2 Login/Logout de Empresas
 
 - O login é feito com as credenciais informadas no cadastro (**username** e **senha**).  
