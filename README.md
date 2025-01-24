@@ -1,3 +1,6 @@
+## RegistroPro - Banco de cadastro para empresas e usuários
+## .plataforma on-line.
+
 # README - Projeto de Cadastro de Funcionários Vinculados a Empresas
 
 Este projeto consiste em uma aplicação **Django** que permite gerenciar empresas e seus funcionários. Além do cadastro, é possível exportar os dados dos funcionários para um arquivo **Excel** (utilizando a biblioteca **Pandas**). A aplicação está organizada em dois aplicativos (apps) principais:
@@ -165,3 +168,22 @@ def logout(request):
     return redirect('/empresas/logar_empresa')
 ```
 
+## 8. Contribuindo
+
+Contribuições são bem-vindas! Siga os passos abaixo:
+
+1. **Faça um fork** do repositório  
+2. **Crie uma branch** para sua feature (`git checkout -b feature/nova-feature`)  
+3. **Faça o commit** das suas alterações (`git commit -m 'Minha nova feature'`)  
+4. **Faça o push** para sua branch (`git push origin feature/nova-feature`)  
+5. **Abra um Pull Request** neste repositório  
+
+---
+
+## 9. Licença
+
+Sinta-se livre para utilizá-lo e modificá-lo de acordo com suas necessidades.
+
+**Contato**: Caso tenha dúvidas ou sugestões, fique à vontade para abrir uma issue ou entrar em contato.
+
+*Obrigada por usar o sistema RegistroPro!*
