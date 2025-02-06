@@ -9,7 +9,7 @@ from django.contrib import messages
 def cadastrar_funcionario(request):  
     #return HttpResponse('Olá mundo')
     if not request.user.is_authenticated:
-        return redirect('/empresas/logar_empresa')
+        return redirect('/empresas/logar_empresa/')
     
     if request.method == 'GET':
         categorias = Categoria.objects.all()
